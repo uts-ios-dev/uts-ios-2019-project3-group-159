@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Style Transfer Starter
 //
-//  Created by Sai Kambampati on 7/7/18.
+//  Created by Jared Chung
 //  Copyright © 2018 AppCoda. All rights reserved.
 //
 

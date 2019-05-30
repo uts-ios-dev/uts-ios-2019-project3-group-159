@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7F0A358F229F5CBC0066AF6E /* my_style_025_640_640.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A358C229F5CBC0066AF6E /* my_style_025_640_640.mlmodel */; };
 		7F0A3590229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */; };
+		7F0A35B1229F85B50066AF6E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0A35A0229F77860066AF6E /* Photos.framework */; };
+		7F0A35B2229F85BB0066AF6E /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0A359E229F77860066AF6E /* PhotosUI.framework */; };
+		7F0A35B4229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */; };
 		8BB97E9720F1B04D005EDFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */; };
 		8BB97E9920F1B04D005EDFCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB97E9820F1B04D005EDFCE /* ViewController.swift */; };
 		8BB97E9C20F1B04D005EDFCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB97E9A20F1B04D005EDFCE /* Main.storyboard */; };
@@ -17,9 +20,25 @@
 		8BC5D01720F1B2DA0097EA64 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7F0A35AF229F77860066AF6E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7F0A358C229F5CBC0066AF6E /* my_style_025_640_640.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = my_style_025_640_640.mlmodel; sourceTree = "<group>"; };
 		7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = my_style_025_640_640_tron.mlmodel; sourceTree = "<group>"; };
+		7F0A359E229F77860066AF6E /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		7F0A35A0229F77860066AF6E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = my_style_025_640_640_scream.mlmodel; path = ../../../my_style_025_640_640_scream.mlmodel; sourceTree = "<group>"; };
 		8BB97E9320F1B04D005EDFCE /* Style Transfer Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Style Transfer Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB97E9820F1B04D005EDFCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0A35B2229F85BB0066AF6E /* PhotosUI.framework in Frameworks */,
+				7F0A35B1229F85B50066AF6E /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +65,7 @@
 		7F0A358B229F5CBC0066AF6E /* styleTransferImages */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */,
 				7F0A358C229F5CBC0066AF6E /* my_style_025_640_640.mlmodel */,
 				7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */,
 			);
@@ -51,10 +73,20 @@
 			path = "../../../../Downloads/Style Transfer Starter/Style Transfer Starter/styleTransferImages";
 			sourceTree = "<group>";
 		};
+		7F0A359D229F77860066AF6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A359E229F77860066AF6E /* PhotosUI.framework */,
+				7F0A35A0229F77860066AF6E /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8BB97E8A20F1B04D005EDFCE = {
 			isa = PBXGroup;
 			children = (
 				8BB97E9520F1B04D005EDFCE /* Style Transfer Starter */,
+				7F0A359D229F77860066AF6E /* Frameworks */,
 				8BB97E9420F1B04D005EDFCE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,12 +104,12 @@
 			children = (
 				8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */,
 				8BB97E9820F1B04D005EDFCE /* ViewController.swift */,
+				8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */,
 				7F0A358B229F5CBC0066AF6E /* styleTransferImages */,
 				8BB97E9A20F1B04D005EDFCE /* Main.storyboard */,
 				8BB97E9D20F1B052005EDFCE /* Assets.xcassets */,
 				8BB97E9F20F1B052005EDFCE /* LaunchScreen.storyboard */,
 				8BB97EA220F1B052005EDFCE /* Info.plist */,
-				8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */,
 			);
 			path = "Style Transfer Starter";
 			sourceTree = "<group>";
@@ -92,6 +124,7 @@
 				8BB97E8F20F1B04D005EDFCE /* Sources */,
 				8BB97E9020F1B04D005EDFCE /* Frameworks */,
 				8BB97E9120F1B04D005EDFCE /* Resources */,
+				7F0A35AF229F77860066AF6E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -108,7 +141,7 @@
 		8BB97E8B20F1B04D005EDFCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = AppCoda;
 				TargetAttributes = {
@@ -154,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0A3590229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel in Sources */,
+				7F0A35B4229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */,
 				8BB97E9920F1B04D005EDFCE /* ViewController.swift in Sources */,
 				8BB97E9720F1B04D005EDFCE /* AppDelegate.swift in Sources */,
 				7F0A358F229F5CBC0066AF6E /* my_style_025_640_640.mlmodel in Sources */,

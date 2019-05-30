@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Style Transfer Starter
 //
-//  Created by Sai Kambampati on 7/7/18.
+//  Created by Jared Chung
 //  Copyright © 2018 AppCoda. All rights reserved.
 //
 
@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.layer.masksToBounds = true
     }
 
+    // Image Selector
     @IBAction func chooseImage(_ sender: UIButton) {
         // Choose Image Here
         imagePicker.allowsEditing = false
@@ -68,12 +69,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(imagePicker, animated: true, completion: nil)
     }
     
+    // Filter Selector
     @IBAction func transformImage(_ sender: Any) {
         let actionSheet = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Geometric Transform", style: .default, handler: geometricTransform))
         actionSheet.addAction(UIAlertAction(title: "Tron", style: .default, handler: tronTransform))
-        
+        actionSheet.addAction(UIAlertAction(title: "Scream", style: .default, handler: screamTransform))
+
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
         
@@ -100,13 +103,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         // Style Transfer Here
         let model = my_style_025_640_640_tron()
         
-        //let styleArray = try? MLMultiArray(shape: [1] as [NSNumber], dataType: .double)
-        //styleArray?[0] = 1.0
-        
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                //, index: styleArray!
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -117,6 +116,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    func screamTransform(action: UIAlertAction!) {
+        // Style Transfer Here
+        let model = my_style_025_640_640_scream()
+        
+        if let image = pixelBuffer(from: imageView.image!) {
+            do {
+                let predictionOutput = try model.prediction(image: image)
+                let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
+                let tempContext = CIContext(options: nil)
+                let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
+                imageView.image = UIImage(cgImage: tempImage!)
+            } catch let error as NSError {
+                print("CoreML Model Error: \(error)")
+            }
+        }
+    }
+    
+    
+    // Convert Image into the correct Dimensions
     func pixelBuffer(from image: UIImage) -> CVPixelBuffer? {
         // 1
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 640, height: 640), true, 2.0)
@@ -153,6 +171,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return pixelBuffer
     }
     
+    // Change Image based on what was chosen (e.g Camera / Gallery)
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
