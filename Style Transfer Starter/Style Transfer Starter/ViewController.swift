@@ -178,6 +178,62 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         dismiss(animated: true, completion: nil)
     }
+    //MARK: - Add image to Library
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Your altered image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
+    func showAlertWith(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+    }
+    
+    @IBAction func saveImage(_ sender: UIButton) {
+
+        let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertController.Style.alert)
+        //Step : 2
+        let save = UIAlertAction(title: "Save", style: .default) { (alertAction) in
+            let textField = alert.textFields![0] as UITextField
+            if textField.text != "" {
+                //Read TextFields text data
+                
+                UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            
+                print(textField.text!)
+                print("TF 1 : \(textField.text!)")
+                
+            } else {
+                print("TF 1 is Empty...")
+            }
+            
+        }
+        
+        //Step : 3
+        //For first TF
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter your first name"
+        }
+        
+        //Step : 4
+        alert.addAction(save)
+        //Cancel action
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
+        alert.addAction(cancel)
+        //OR single line action
+        //alert.addAction(UIAlertAction(title: "Cancel", style: .default) { (alertAction) in })
+        
+        self.present(alert, animated:true, completion: nil)
+
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
