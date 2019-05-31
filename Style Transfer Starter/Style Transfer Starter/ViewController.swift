@@ -21,7 +21,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     // Image Selector
     @IBAction func chooseImage(_ sender: UIButton) {
-
+        // Choose Image Here
+        imagePicker.allowsEditing = false
+        
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in

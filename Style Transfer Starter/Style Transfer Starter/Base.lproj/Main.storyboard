@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="7w2-Ic-FOI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarryNight" translatesAutoresizingMaskIntoConstraints="NO" id="7w2-Ic-FOI">
                                 <rect key="frame" x="16" y="156" width="382" height="382"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="992" id="61R-v2-qGK"/>
@@ -26,7 +25,7 @@
                                     <constraint firstAttribute="width" secondItem="7w2-Ic-FOI" secondAttribute="height" multiplier="1:1" id="TnZ-u9-oJF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an4-K1-pad" customClass="CustomButton" customModule="ImageTransformer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an4-K1-pad" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
                                 <rect key="frame" x="30" y="648" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -44,7 +43,7 @@
                                     <action selector="transformImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="901-gh-sOr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="ImageTransformer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
                                 <rect key="frame" x="30" y="568" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -116,6 +115,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="city" width="640" height="427"/>
+        <image name="StarryNight" width="1280" height="1014"/>
     </resources>
 </document>

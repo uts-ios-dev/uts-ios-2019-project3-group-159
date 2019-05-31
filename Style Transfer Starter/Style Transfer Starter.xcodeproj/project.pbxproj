@@ -39,7 +39,7 @@
 		7F0A359E229F77860066AF6E /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		7F0A35A0229F77860066AF6E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = my_style_025_640_640_scream.mlmodel; path = ../../../my_style_025_640_640_scream.mlmodel; sourceTree = "<group>"; };
-		8BB97E9320F1B04D005EDFCE /* ImageTransformer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageTransformer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BB97E9320F1B04D005EDFCE /* Style Transfer Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Style Transfer Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB97E9820F1B04D005EDFCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BB97E9B20F1B04D005EDFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		8BB97E8A20F1B04D005EDFCE = {
 			isa = PBXGroup;
 			children = (
-				8BB97E9520F1B04D005EDFCE /* imageTransformer */,
+				8BB97E9520F1B04D005EDFCE /* Style Transfer Starter */,
 				7F0A359D229F77860066AF6E /* Frameworks */,
 				8BB97E9420F1B04D005EDFCE /* Products */,
 			);
@@ -94,12 +94,12 @@
 		8BB97E9420F1B04D005EDFCE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8BB97E9320F1B04D005EDFCE /* ImageTransformer.app */,
+				8BB97E9320F1B04D005EDFCE /* Style Transfer Starter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8BB97E9520F1B04D005EDFCE /* imageTransformer */ = {
+		8BB97E9520F1B04D005EDFCE /* Style Transfer Starter */ = {
 			isa = PBXGroup;
 			children = (
 				8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */,
@@ -111,15 +111,15 @@
 				8BB97E9F20F1B052005EDFCE /* LaunchScreen.storyboard */,
 				8BB97EA220F1B052005EDFCE /* Info.plist */,
 			);
-			path = imageTransformer;
+			path = "Style Transfer Starter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8BB97E9220F1B04D005EDFCE /* ImageTransformer */ = {
+		8BB97E9220F1B04D005EDFCE /* Style Transfer Starter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BB97EA520F1B052005EDFCE /* Build configuration list for PBXNativeTarget "ImageTransformer" */;
+			buildConfigurationList = 8BB97EA520F1B052005EDFCE /* Build configuration list for PBXNativeTarget "Style Transfer Starter" */;
 			buildPhases = (
 				8BB97E8F20F1B04D005EDFCE /* Sources */,
 				8BB97E9020F1B04D005EDFCE /* Frameworks */,
@@ -130,9 +130,9 @@
 			);
 			dependencies = (
 			);
-			name = ImageTransformer;
+			name = "Style Transfer Starter";
 			productName = "Style Transfer Starter";
-			productReference = 8BB97E9320F1B04D005EDFCE /* ImageTransformer.app */;
+			productReference = 8BB97E9320F1B04D005EDFCE /* Style Transfer Starter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -150,7 +150,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8BB97E8E20F1B04D005EDFCE /* Build configuration list for PBXProject "ImageTransformer" */;
+			buildConfigurationList = 8BB97E8E20F1B04D005EDFCE /* Build configuration list for PBXProject "Style Transfer Starter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -163,7 +163,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8BB97E9220F1B04D005EDFCE /* ImageTransformer */,
+				8BB97E9220F1B04D005EDFCE /* Style Transfer Starter */,
 			);
 		};
 /* End PBXProject section */
@@ -338,9 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/imageTransformer/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				INFOPLIST_FILE = "Style Transfer Starter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,9 +355,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/imageTransformer/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				INFOPLIST_FILE = "Style Transfer Starter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BB97E8E20F1B04D005EDFCE /* Build configuration list for PBXProject "ImageTransformer" */ = {
+		8BB97E8E20F1B04D005EDFCE /* Build configuration list for PBXProject "Style Transfer Starter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BB97EA320F1B052005EDFCE /* Debug */,
@@ -383,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8BB97EA520F1B052005EDFCE /* Build configuration list for PBXNativeTarget "ImageTransformer" */ = {
+		8BB97EA520F1B052005EDFCE /* Build configuration list for PBXNativeTarget "Style Transfer Starter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BB97EA620F1B052005EDFCE /* Debug */,
