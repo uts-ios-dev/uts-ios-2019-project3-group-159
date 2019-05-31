@@ -11,7 +11,7 @@
 		7F0A3590229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */; };
 		7F0A35B1229F85B50066AF6E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0A35A0229F77860066AF6E /* Photos.framework */; };
 		7F0A35B2229F85BB0066AF6E /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0A359E229F77860066AF6E /* PhotosUI.framework */; };
-		7F0A35B4229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */; };
+		7F0A35B822A1249D0066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A35B722A1249D0066AF6E /* my_style_025_640_640_scream.mlmodel */; };
 		8BB97E9720F1B04D005EDFCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */; };
 		8BB97E9920F1B04D005EDFCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB97E9820F1B04D005EDFCE /* ViewController.swift */; };
 		8BB97E9C20F1B04D005EDFCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BB97E9A20F1B04D005EDFCE /* Main.storyboard */; };
@@ -38,7 +38,7 @@
 		7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = my_style_025_640_640_tron.mlmodel; sourceTree = "<group>"; };
 		7F0A359E229F77860066AF6E /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		7F0A35A0229F77860066AF6E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
-		7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = my_style_025_640_640_scream.mlmodel; path = ../../../my_style_025_640_640_scream.mlmodel; sourceTree = "<group>"; };
+		7F0A35B722A1249D0066AF6E /* my_style_025_640_640_scream.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = my_style_025_640_640_scream.mlmodel; path = "Style Transfer Starter/styleTransferImages/my_style_025_640_640_scream.mlmodel"; sourceTree = SOURCE_ROOT; };
 		8BB97E9320F1B04D005EDFCE /* Style Transfer Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Style Transfer Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BB97E9820F1B04D005EDFCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		7F0A358B229F5CBC0066AF6E /* styleTransferImages */ = {
 			isa = PBXGroup;
 			children = (
-				7F0A35B3229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel */,
+				7F0A35B722A1249D0066AF6E /* my_style_025_640_640_scream.mlmodel */,
 				7F0A358C229F5CBC0066AF6E /* my_style_025_640_640.mlmodel */,
 				7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */,
 			);
@@ -187,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0A3590229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel in Sources */,
-				7F0A35B4229F8C750066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */,
+				7F0A35B822A1249D0066AF6E /* my_style_025_640_640_scream.mlmodel in Sources */,
 				8BB97E9920F1B04D005EDFCE /* ViewController.swift in Sources */,
 				8BB97E9720F1B04D005EDFCE /* AppDelegate.swift in Sources */,
 				7F0A358F229F5CBC0066AF6E /* my_style_025_640_640.mlmodel in Sources */,
