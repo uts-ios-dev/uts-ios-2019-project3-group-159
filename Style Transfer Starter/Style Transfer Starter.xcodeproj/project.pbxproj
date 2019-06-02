@@ -82,6 +82,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F0A35B922A3B4D00066AF6E /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			path = View.temp_caseinsensitive_rename.;
+			sourceTree = "<group>";
+		};
 		8BB97E8A20F1B04D005EDFCE = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +110,7 @@
 		8BB97E9520F1B04D005EDFCE /* Style Transfer Starter */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A35B922A3B4D00066AF6E /* view */,
 				8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */,
 				8BB97E9820F1B04D005EDFCE /* ViewController.swift */,
 				8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */,
