@@ -108,7 +108,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-//                backupImage = imageView.copy() as! UIImageView
+                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -126,7 +126,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-//                backupImage = imageView.copy() as! UIImageView
+                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
