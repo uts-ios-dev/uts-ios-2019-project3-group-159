@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StarryNight" translatesAutoresizingMaskIntoConstraints="NO" id="7w2-Ic-FOI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="city" translatesAutoresizingMaskIntoConstraints="NO" id="7w2-Ic-FOI">
                                 <rect key="frame" x="16" y="156" width="382" height="382"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="992" id="61R-v2-qGK"/>
@@ -61,9 +61,19 @@
                                     <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YCe-CY-UA8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-WH-HGi">
-                                <rect key="frame" x="190" y="763" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-Tw-qGn">
+                                <rect key="frame" x="49" y="740" width="74" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshImageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3it-qH-S9P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-WH-HGi">
+                                <rect key="frame" x="297" y="740" width="48" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zcl-1z-ZMq"/>
@@ -115,6 +125,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="StarryNight" width="1280" height="1014"/>
+        <image name="city" width="640" height="427"/>
     </resources>
 </document>

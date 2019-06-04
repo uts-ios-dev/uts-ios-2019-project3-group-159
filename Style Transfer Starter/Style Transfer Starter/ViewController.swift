@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
+    var backupImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
+                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -106,6 +108,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
+                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -123,6 +126,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
+                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -220,7 +224,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Step : 3
         //For first TF
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter your first name"
+            textField.placeholder = "Enter name of Photo"
         }
         
         //Step : 4
@@ -228,11 +232,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //Cancel action
         let cancel = UIAlertAction(title: "Cancel", style: .default) { (alertAction) in }
         alert.addAction(cancel)
-        //OR single line action
-        //alert.addAction(UIAlertAction(title: "Cancel", style: .default) { (alertAction) in })
         
         self.present(alert, animated:true, completion: nil)
 
+    }
+    
+    
+    @IBAction func refreshImageView(_ sender: UIButton) {
+        
+        imageView.image = backupImage
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
