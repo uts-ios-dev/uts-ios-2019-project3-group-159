@@ -210,10 +210,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if textField.text != "" {
                 //Read TextFields text data
                 
-                UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
-            
-                print(textField.text!)
-                print("TF 1 : \(textField.text!)")
+                //Open Share options
+                let image = self.imageView.image!
+                let imageShare = [ image ]
+                let activityViewController = UIActivityViewController(activityItems: imageShare , applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.view
+                self.present(activityViewController, animated: true, completion: nil)
                 
             } else {
                 print("TF 1 is Empty...")
