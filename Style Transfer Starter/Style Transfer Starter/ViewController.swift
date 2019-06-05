@@ -77,9 +77,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         actionSheet.addAction(UIAlertAction(title: "Geometric Transform", style: .default, handler: geometricTransform))
         actionSheet.addAction(UIAlertAction(title: "Tron", style: .default, handler: tronTransform))
         actionSheet.addAction(UIAlertAction(title: "Scream", style: .default, handler: screamTransform))
-        actionSheet.addAction(UIAlertAction(title: "Chrome", style: .default, handler: defaultChromeFilter))
-        actionSheet.addAction(UIAlertAction(title: "Fade", style: .default, handler: defaultFadeFilter))
-        actionSheet.addAction(UIAlertAction(title: "Mono", style: .default, handler: defaultMonoFilter))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(actionSheet, animated: true, completion: nil)
@@ -140,18 +137,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    func defaultChromeFilter(action: UIAlertAction!){
-        
+    
+    @IBAction func chromeFilter(_ sender: Any) {
+         backupImage = imageView.image?.copy() as! UIImage
         imageView.image = imageView.image!.addFilter(filter: FilterType.Chrome)
     }
-    
-    func defaultFadeFilter(action: UIAlertAction!){
+    @IBAction func fadeFilter(_ sender: Any) {
         
-        imageView.image = imageView.image!.addFilter(filter: FilterType.Fade)
+          backupImage = imageView.image?.copy() as! UIImage
+         imageView.image = imageView.image!.addFilter(filter: FilterType.Fade)
     }
-    
-    func defaultMonoFilter(action: UIAlertAction!){
-        
+    @IBAction func monoFilter(_ sender: Any) {
+         backupImage = imageView.image?.copy() as! UIImage
         imageView.image = imageView.image!.addFilter(filter: FilterType.Mono)
     }
     
@@ -261,7 +258,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func refreshImageView(_ sender: UIButton) {
         
-        imageView.image = backupImage
+        imageView.image =  UIImage(named: "city")
+//        imageView.image = backupImage
         
     }
     

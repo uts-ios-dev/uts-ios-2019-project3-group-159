@@ -25,8 +25,8 @@
                                     <constraint firstAttribute="width" secondItem="7w2-Ic-FOI" secondAttribute="height" multiplier="1:1" id="TnZ-u9-oJF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an4-K1-pad" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
-                                <rect key="frame" x="30" y="648" width="354" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an4-K1-pad" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
+                                <rect key="frame" x="30" y="614" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rqv-Gn-mN8"/>
@@ -43,8 +43,8 @@
                                     <action selector="transformImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="901-gh-sOr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
-                                <rect key="frame" x="30" y="568" width="354" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
+                                <rect key="frame" x="30" y="556" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dtD-A1-axq"/>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-Tw-qGn">
-                                <rect key="frame" x="49" y="740" width="74" height="39"/>
+                                <rect key="frame" x="40" y="774" width="74" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Refresh"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJR-WH-HGi">
-                                <rect key="frame" x="297" y="740" width="48" height="39"/>
+                                <rect key="frame" x="336" y="774" width="48" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Save"/>
@@ -79,14 +79,53 @@
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zcl-1z-ZMq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-9p-ace">
+                                <rect key="frame" x="108" y="691" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-80" minY="40" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
+                                <state key="normal" title="Chrome" image="mono">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="chromeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG2-fK-0Cw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJT-kw-OQZ">
+                                <rect key="frame" x="177" y="691" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-80" minY="40" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
+                                <state key="normal" title="Fade" image="fade">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fadeFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YWc-YV-0Nl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ut7-Ap-heN">
+                                <rect key="frame" x="246" y="691" width="61" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <inset key="titleEdgeInsets" minX="-80" minY="40" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="25"/>
+                                <state key="normal" title="Mono" image="chrome">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="monoFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cdt-cu-HxI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="an4-K1-pad" secondAttribute="trailing" constant="30" id="AZz-tS-big"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="an4-K1-pad" secondAttribute="trailing" constant="28" id="AZz-tS-big"/>
                             <constraint firstItem="zsR-nf-Ba3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="IqB-Zc-c0v"/>
                             <constraint firstItem="7w2-Ic-FOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="PLK-2c-Cf5"/>
                             <constraint firstItem="7w2-Ic-FOI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Pt1-ka-d7a"/>
-                            <constraint firstItem="an4-K1-pad" firstAttribute="top" secondItem="zsR-nf-Ba3" secondAttribute="bottom" constant="30" id="a6Y-P1-4re"/>
+                            <constraint firstItem="an4-K1-pad" firstAttribute="top" secondItem="zsR-nf-Ba3" secondAttribute="bottom" constant="10" id="a6Y-P1-4re"/>
                             <constraint firstItem="an4-K1-pad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fTw-zr-fiU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7w2-Ic-FOI" secondAttribute="trailing" constant="16" id="rF7-X5-K5o"/>
                             <constraint firstItem="zsR-nf-Ba3" firstAttribute="top" secondItem="7w2-Ic-FOI" secondAttribute="bottom" constant="30" id="udS-Dp-bFs"/>
@@ -125,6 +164,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chrome" width="80" height="80"/>
         <image name="city" width="640" height="427"/>
+        <image name="fade" width="80" height="80"/>
+        <image name="mono" width="80" height="80"/>
     </resources>
 </document>
