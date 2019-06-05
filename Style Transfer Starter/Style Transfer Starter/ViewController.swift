@@ -137,16 +137,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    
+    //Chrome Filter Button
     @IBAction func chromeFilter(_ sender: Any) {
          backupImage = imageView.image?.copy() as! UIImage
         imageView.image = imageView.image!.addFilter(filter: FilterType.Chrome)
     }
+    //Fade Filter Button
     @IBAction func fadeFilter(_ sender: Any) {
         
           backupImage = imageView.image?.copy() as! UIImage
          imageView.image = imageView.image!.addFilter(filter: FilterType.Fade)
     }
+    //Mono Filter Button
     @IBAction func monoFilter(_ sender: Any) {
          backupImage = imageView.image?.copy() as! UIImage
         imageView.image = imageView.image!.addFilter(filter: FilterType.Mono)
@@ -258,8 +260,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func refreshImageView(_ sender: UIButton) {
         
-        imageView.image =  UIImage(named: "city")
-//        imageView.image = backupImage
+       // imageView.image =  UIImage(named: "city")
+        imageView.image = backupImage
         
     }
     
