@@ -77,8 +77,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         actionSheet.addAction(UIAlertAction(title: "Geometric Transform", style: .default, handler: geometricTransform))
         actionSheet.addAction(UIAlertAction(title: "Tron", style: .default, handler: tronTransform))
         actionSheet.addAction(UIAlertAction(title: "Scream", style: .default, handler: screamTransform))
-
+        actionSheet.addAction(UIAlertAction(title: "Chrome", style: .default, handler: defaultChromeFilter))
+        actionSheet.addAction(UIAlertAction(title: "Fade", style: .default, handler: defaultChromeFilter))
+        actionSheet.addAction(UIAlertAction(title: "Mono", style: .default, handler: defaultChromeFilter))
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         present(actionSheet, animated: true, completion: nil)
         
     }
@@ -135,6 +138,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print("CoreML Model Error: \(error)")
             }
         }
+    }
+    
+    func defaultChromeFilter(action: UIAlertAction!){
+        print("defaultChromeFilter")
     }
     
     
@@ -249,4 +256,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+
 }
