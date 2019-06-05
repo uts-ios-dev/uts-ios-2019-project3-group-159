@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 extension UIImage {
     func addFilter(filter : FilterType) -> UIImage {
         let filter = CIFilter(name: filter.rawValue)
