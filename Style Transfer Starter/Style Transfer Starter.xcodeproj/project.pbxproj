@@ -69,8 +69,7 @@
 				7F0A358C229F5CBC0066AF6E /* my_style_025_640_640.mlmodel */,
 				7F0A358D229F5CBC0066AF6E /* my_style_025_640_640_tron.mlmodel */,
 			);
-			name = styleTransferImages;
-			path = "../../../../Downloads/Style Transfer Starter/Style Transfer Starter/styleTransferImages";
+			path = styleTransferImages;
 			sourceTree = "<group>";
 		};
 		7F0A359D229F77860066AF6E /* Frameworks */ = {

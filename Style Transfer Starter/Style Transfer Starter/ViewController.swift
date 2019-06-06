@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -238,6 +239,66 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(alert, animated:true, completion: nil)
 
     }
+    
+    struct Filter {
+        
+        let filterName: String
+        var filterEffectValue: Any?
+        var filterEffectValueName: String?
+        
+        init(filterName: String, filterEffectValue: Any?, filterEffectValueName: String? ) {
+            self.filterName = filterName
+            self.filterEffectValue = filterEffectValue
+            self.filterEffectValueName = filterEffectValueName
+         }
+    }
+    
+    private func appltFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
+        
+        guard let cgImage = image.cgImage,
+            let openGLContext = EAGLContext(api: .openGLES3) else {
+            return nil
+        }
+        
+        let context = CIContext(eaglContext: openGLContext)
+        let ciImage = CIImage(cgImage: cgImage)
+        let filter = CIFilter(name: filterEffect.filterName)
+        
+        filter?.setValue(ciImage, forKey: kCIInputImageKey)
+        if let filterEffectValue = filterEffect.filterEffectValue,
+            let filterEffectValueName = filterEffect.filterEffectValueName {
+            filter?.setValue(filterEffectValue, forKey: filterEffectValueName)
+            
+        }
+        var filteredImage: UIImage?
+        
+        if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage,
+            let cgiImageResult = context.createCGImage(output, from: output.extent) {
+            filteredImage = UIImage(cgImage: cgiImageResult)
+            
+        }
+        
+        return filteredImage
+        
+    }
+    
+    
+    
+    @IBAction func applySepia(_ sender: Any) {
+        
+        guard let image = imageView.image else {
+            return
+        }
+        
+        imageView.image = appltFilterTo(image: image, filterEffect: Filter(filterName: "CISepiaTone", filterEffectValue: 0.70, filterEffectValueName: kCIInputIntensityKey))
+    }
+    
+    
+    
+    
+    
+    
+    
     
     
     @IBAction func refreshImageView(_ sender: UIButton) {
