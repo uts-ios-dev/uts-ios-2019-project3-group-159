@@ -77,8 +77,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         actionSheet.addAction(UIAlertAction(title: "Geometric Transform", style: .default, handler: geometricTransform))
         actionSheet.addAction(UIAlertAction(title: "Tron", style: .default, handler: tronTransform))
         actionSheet.addAction(UIAlertAction(title: "Scream", style: .default, handler: screamTransform))
-
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
         present(actionSheet, animated: true, completion: nil)
         
     }
@@ -136,6 +136,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
+    
+    //Chrome Filter Button
+    @IBAction func chromeFilter(_ sender: Any) {
+         backupImage = imageView.image?.copy() as! UIImage
+        imageView.image = imageView.image!.addFilter(filter: FilterType.Chrome)
+    }
+    //Fade Filter Button
+    @IBAction func fadeFilter(_ sender: Any) {
+        
+          backupImage = imageView.image?.copy() as! UIImage
+         imageView.image = imageView.image!.addFilter(filter: FilterType.Fade)
+    }
+    //Mono Filter Button
+    @IBAction func monoFilter(_ sender: Any) {
+         backupImage = imageView.image?.copy() as! UIImage
+        imageView.image = imageView.image!.addFilter(filter: FilterType.Mono)
+    }
+    
     
     
     // Convert Image into the correct Dimensions
@@ -242,6 +260,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func refreshImageView(_ sender: UIButton) {
         
+       // imageView.image =  UIImage(named: "city")
         imageView.image = backupImage
         
     }
@@ -249,4 +268,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+
 }
