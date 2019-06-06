@@ -36,6 +36,8 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Our application needs permission to write photos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Set the background of the app with your beautiful photography</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -14,17 +14,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     let imagePicker = UIImagePickerController()
     var backupImage = UIImage()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         imageView.layer.masksToBounds = true
+        // Create copy for refresh
+        backupImage = imageView.image?.copy() as! UIImage
     }
 
     // Image Selector
     @IBAction func chooseImage(_ sender: UIButton) {
-        // Choose Image Here
-        imagePicker.allowsEditing = false
-        
+       
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -90,7 +91,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
+                // Create copy for refresh
+//                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -108,7 +110,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
+                // Create copy for refresh
+//                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -126,7 +129,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
+                // Create copy for refresh
+//                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -138,7 +142,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    // Convert Image into the correct Dimensions
+    
+    
+    // Convert Image into the correct Dimensions (e.g 
     func pixelBuffer(from image: UIImage) -> CVPixelBuffer? {
         // 1
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 640, height: 640), true, 2.0)
@@ -179,10 +185,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
+            // Create copy for refresh
+            backupImage = pickedImage
         }
         dismiss(animated: true, completion: nil)
     }
-    //MARK: - Add image to Library
+    
+    // Add image to Library
     @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
@@ -203,7 +212,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func saveImage(_ sender: UIButton) {
 
-        let alert = UIAlertController(title: "Great Title", message: "Please input something", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Save Image", message: "Please input image name", preferredStyle: UIAlertController.Style.alert)
         //Step : 2
         let save = UIAlertAction(title: "Save", style: .default) { (alertAction) in
             let textField = alert.textFields![0] as UITextField
@@ -213,18 +222,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
             
                 print(textField.text!)
-                print("TF 1 : \(textField.text!)")
+                print("Text : \(textField.text!)")
                 
             } else {
-                print("TF 1 is Empty...")
+                print("Text is Empty...")
             }
             
         }
         
-        //Step : 3
-        //For first TF
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter name of Photo"
+            textField.placeholder = "Altered Photo"
         }
         
         //Step : 4

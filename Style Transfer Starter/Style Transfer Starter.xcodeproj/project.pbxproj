@@ -85,9 +85,20 @@
 		7F0A35B922A3B4D00066AF6E /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8BB97E9A20F1B04D005EDFCE /* Main.storyboard */,
+				8BB97E9F20F1B052005EDFCE /* LaunchScreen.storyboard */,
 			);
 			name = view;
 			path = View.temp_caseinsensitive_rename.;
+			sourceTree = "<group>";
+		};
+		7F0A35BA22A3E3180066AF6E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8BB97E9820F1B04D005EDFCE /* ViewController.swift */,
+				8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */,
+			);
+			path = controller;
 			sourceTree = "<group>";
 		};
 		8BB97E8A20F1B04D005EDFCE = {
@@ -110,14 +121,11 @@
 		8BB97E9520F1B04D005EDFCE /* Style Transfer Starter */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A35BA22A3E3180066AF6E /* controller */,
 				7F0A35B922A3B4D00066AF6E /* view */,
 				8BB97E9620F1B04D005EDFCE /* AppDelegate.swift */,
-				8BB97E9820F1B04D005EDFCE /* ViewController.swift */,
-				8BC5D01620F1B2DA0097EA64 /* CustomButton.swift */,
 				7F0A358B229F5CBC0066AF6E /* styleTransferImages */,
-				8BB97E9A20F1B04D005EDFCE /* Main.storyboard */,
 				8BB97E9D20F1B052005EDFCE /* Assets.xcassets */,
-				8BB97E9F20F1B052005EDFCE /* LaunchScreen.storyboard */,
 				8BB97EA220F1B052005EDFCE /* Info.plist */,
 			);
 			path = "Style Transfer Starter";
