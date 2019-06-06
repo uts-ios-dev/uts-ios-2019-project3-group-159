@@ -282,18 +282,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
-    
+    //Sepia Filter
     
     @IBAction func applySepia(_ sender: Any) {
-        
-        guard let image = imageView.image else {
+                guard let image = imageView.image else {
             return
         }
         
         imageView.image = appltFilterTo(image: image, filterEffect: Filter(filterName: "CISepiaTone", filterEffectValue: 0.70, filterEffectValueName: kCIInputIntensityKey))
     }
     
-    
+    // Photo Effects proces / Old film look Filter
+    @IBAction func applyPosterize(_ sender: Any) {
+        
+        guard let image = imageView.image else {
+            return
+        }
+        
+        imageView.image = appltFilterTo(image: image, filterEffect: Filter(filterName: "CIPhotoEffectProcess", filterEffectValue: nil, filterEffectValueName: nil))
+    }
     
     
     
