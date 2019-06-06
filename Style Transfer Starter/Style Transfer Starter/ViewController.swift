@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         imagePicker.delegate = self
         imageView.layer.masksToBounds = true
+        backupImage = imageView.image?.copy() as! UIImage
     }
 
     // Image Selector
@@ -90,7 +91,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -108,7 +108,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -126,7 +125,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = pixelBuffer(from: imageView.image!) {
             do {
                 let predictionOutput = try model.prediction(image: image)
-                backupImage = imageView.image?.copy() as! UIImage
                 let ciImage = CIImage(cvPixelBuffer: predictionOutput.stylizedImage)
                 let tempContext = CIContext(options: nil)
                 let tempImage = tempContext.createCGImage(ciImage, from: CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(predictionOutput.stylizedImage), height: CVPixelBufferGetHeight(predictionOutput.stylizedImage)))
@@ -197,6 +195,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = pickedImage
+            // Add so it can be refreshed from start
+            backupImage = imageView.image?.copy() as! UIImage
         }
         dismiss(animated: true, completion: nil)
     }
