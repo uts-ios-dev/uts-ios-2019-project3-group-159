@@ -26,14 +26,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an4-K1-pad" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
-                                <rect key="frame" x="30" y="633" width="354" height="50"/>
+                                <rect key="frame" x="30" y="648" width="354" height="28"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rqv-Gn-mN8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Filter"/>
+                                <state key="normal" title="NST Filters"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
@@ -43,8 +43,8 @@
                                     <action selector="transformImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="901-gh-sOr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
-                                <rect key="frame" x="30" y="568" width="354" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsR-nf-Ba3" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
+                                <rect key="frame" x="30" y="558" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.41568627450980389" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="dtD-A1-axq"/>
@@ -61,9 +61,8 @@
                                     <action selector="chooseImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YCe-CY-UA8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-Tw-qGn">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYa-Tw-qGn">
                                 <rect key="frame" x="49" y="740" width="74" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
@@ -79,37 +78,39 @@
                                     <action selector="saveImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zcl-1z-ZMq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwE-1f-tnr">
-                                <rect key="frame" x="41" y="706" width="124" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9K-EH-9zb" customClass="CustomButton" customModule="Style_Transfer_Starter" customModuleProvider="target">
+                                <rect key="frame" x="34" y="699" width="350" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Apply Sepia"/>
+                                <state key="normal" title="Colour Effect Filters"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="applySepia:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Utg-41-2jg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMv-QV-Kmi">
-                                <rect key="frame" x="194" y="706" width="107" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Old Film"/>
-                                <connections>
-                                    <action selector="applyPosterize:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZQx-FC-Jdu"/>
+                                    <action selector="colourFilters:" destination="BYZ-38-t0r" eventType="touchUpInside" id="man-oi-ENy"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y9K-EH-9zb" secondAttribute="trailing" constant="30" id="1ls-hG-3eV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Y9K-EH-9zb" secondAttribute="trailing" constant="30" id="23H-23-A9G"/>
+                            <constraint firstItem="hYa-Tw-qGn" firstAttribute="top" secondItem="Y9K-EH-9zb" secondAttribute="bottom" constant="22" id="8Nx-Ig-wx7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="an4-K1-pad" secondAttribute="trailing" constant="30" id="AZz-tS-big"/>
                             <constraint firstItem="zsR-nf-Ba3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="IqB-Zc-c0v"/>
                             <constraint firstItem="7w2-Ic-FOI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="PLK-2c-Cf5"/>
                             <constraint firstItem="7w2-Ic-FOI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Pt1-ka-d7a"/>
+                            <constraint firstItem="Y9K-EH-9zb" firstAttribute="top" secondItem="an4-K1-pad" secondAttribute="bottom" constant="8" id="RFA-iU-K4e"/>
                             <constraint firstItem="an4-K1-pad" firstAttribute="top" secondItem="zsR-nf-Ba3" secondAttribute="bottom" constant="30" id="a6Y-P1-4re"/>
                             <constraint firstItem="an4-K1-pad" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fTw-zr-fiU"/>
+                            <constraint firstItem="Y9K-EH-9zb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="r5D-yo-eCz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7w2-Ic-FOI" secondAttribute="trailing" constant="16" id="rF7-X5-K5o"/>
                             <constraint firstItem="zsR-nf-Ba3" firstAttribute="top" secondItem="7w2-Ic-FOI" secondAttribute="bottom" constant="30" id="udS-Dp-bFs"/>
+                            <constraint firstItem="Y9K-EH-9zb" firstAttribute="top" secondItem="an4-K1-pad" secondAttribute="bottom" constant="1" id="uhR-1c-FWX"/>
+                            <constraint firstItem="Y9K-EH-9zb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="vqj-uw-flL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zsR-nf-Ba3" secondAttribute="trailing" constant="30" id="xLg-wL-z8t"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

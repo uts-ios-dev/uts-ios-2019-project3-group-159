@@ -240,6 +240,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     }
     
+    
+    
+    
+    
+    
+    // creates
+    
     struct Filter {
         
         let filterName: String
@@ -253,12 +260,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
          }
     }
     
+    
+    
+    
+    
+        //creates cgImage and OPENGLcontext
+
     private func appltFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
         
         guard let cgImage = image.cgImage,
             let openGLContext = EAGLContext(api: .openGLES3) else {
             return nil
         }
+        
+        // Creates the filters
         
         let context = CIContext(eaglContext: openGLContext)
         let ciImage = CIImage(cgImage: cgImage)
@@ -270,6 +285,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             filter?.setValue(filterEffectValue, forKey: filterEffectValueName)
             
         }
+        
+        // renders the output image
         var filteredImage: UIImage?
         
         if let output = filter?.value(forKey: kCIOutputImageKey) as? CIImage,
@@ -283,7 +300,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     //Sepia Filter
-    
     @IBAction func applySepia(_ sender: Any) {
                 guard let image = imageView.image else {
             return
@@ -302,8 +318,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imageView.image = appltFilterTo(image: image, filterEffect: Filter(filterName: "CIPhotoEffectProcess", filterEffectValue: nil, filterEffectValueName: nil))
     }
     
+     // Inverts the colours of images
+    @IBAction func applyInvert(_ sender: Any) {
+        
+        
+        guard let image = imageView.image else {
+            return
+        }
+        
+        imageView.image = appltFilterTo(image: image, filterEffect: Filter(filterName: "CIColorInvert", filterEffectValue: nil, filterEffectValueName: nil))
+    }
     
-    
+
+      // One button with the options of three different colour filters to choose from
+    @IBAction func colourFilters(_ sender: Any) {
+        
+        let actionSheet = UIAlertController(title: "Choose filter", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Sepia", style: .default, handler: applySepia))
+        actionSheet.addAction(UIAlertAction(title: "Old Film", style: .default, handler: applyPosterize))
+        actionSheet.addAction(UIAlertAction(title: "Invert", style: .default, handler: applyInvert))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
+    }
     
     
     
